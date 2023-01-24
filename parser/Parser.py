@@ -55,6 +55,7 @@ class Tarball:
         except Exception as e:
             return False, e, None
 
+
     def parse1(self, target):
         """Pull the metrics"""
         date_time = open(f"extracted/timedatectl.txt")
