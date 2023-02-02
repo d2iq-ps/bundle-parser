@@ -241,7 +241,15 @@ def parse_ver_2(target):
                     ci["cluster_name"] = pull_value(source, field)[1].lower()
 
     #####  11  ##### 
-    #TODO Get a bundle for a FIPS cluster
+    # Determine if FIPS
+    index = 11
+    source = f"{target}/cluster-info/cluster_version.json"
+    field = "(\"string\": \")(.*)(\")"
+    fips_check = pull_value(source, field )[1].split("v")[1]
+    if "fips" in fips_check:
+        ci["data"][index]["value"] = "True"
+    else:
+        ci["data"][index]["value"] = "False"       
 
     #####  12  #####
     # Get applications
