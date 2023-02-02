@@ -1,4 +1,4 @@
-from Parser import Tarball, parse_ver_1, parse_ver_2
+from modules.Parser import Tarball, parse_ver_1, parse_ver_2
 import json
 import os
 
